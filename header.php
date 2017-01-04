@@ -19,13 +19,21 @@
 
 <meta property="og:type" content="blog">
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
+<?php if ( is_home() ) { ?>
+<meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
+<meta name="twitter:title" content="<?php bloginfo( 'name' ); ?>">
+<?php } elseif ( is_page() || is_single() ) { ?>
+<meta property="og:title" content="<?php the_title( '', ' &#8211; ' ) . bloginfo( 'name' ); ?>">
+<meta name="twitter:title" content="<?php the_title( '', ' &#8211; ' ) . bloginfo( 'name' ); ?>">
+<?php } else { ?>
+<meta property="og:title" content="<?php echo get_the_archive_title(); ?> &#8211; <?php bloginfo( 'name' ); ?>">
+<meta name="twitter:title" content="<?php echo get_the_archive_title(); ?> &#8211; <?php bloginfo( 'name' ); ?>">
+<?php } ?>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
 <meta property="twitter:description" content="<?php bloginfo( 'description' ); ?>">
+<meta property="og:url" content="<?php echo esc_url( home_url() ) . $_SERVER["REQUEST_URI"]; ?>">
+<meta name="twitter:url" content="<?php echo esc_url( home_url() ) . $_SERVER["REQUEST_URI"]; ?>">
 <?php if ( is_single() ) { ?>
-<meta property="og:title" content="<?php the_title(); ?>">
-<meta name="twitter:title" content="<?php the_title(); ?>">
-<meta property="og:url" content="<?php the_permalink(); ?>">
-<meta name="twitter:url" content="<?php the_permalink(); ?>">
 <?php if(has_post_thumbnail()) { ?>
 <meta property="og:image" content="<?php get_featured_image_url(); ?>">
 <meta property="twitter:image" content="<?php get_featured_image_url(); ?>">
@@ -34,10 +42,6 @@
 <meta property="twitter:image" content="<?php echo esc_url( home_url( '/' ) ); ?>img/ogimage.png">
 <?php } ?>
 <?php } else { ?>
-<meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
-<meta name="twitter:title" content="<?php bloginfo( 'name' ); ?>">
-<meta property="og:url" content="<?php echo esc_url( home_url( '/' ) ); ?>">
-<meta name="twitter:url" content="<?php echo esc_url( home_url( '/' ) ); ?>">
 <meta property="og:image" content="<?php echo esc_url( home_url( '/' ) ); ?>img/ogimage.png">
 <meta property="twitter:image" content="<?php echo esc_url( home_url( '/' ) ); ?>img/ogimage.png">
 <?php } ?>
