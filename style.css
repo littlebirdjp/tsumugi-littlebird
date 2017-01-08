@@ -58,3 +58,9 @@ Tags: blog, one-column, custom-background, custom-colors, custom-menu, custom-he
 .pocket-btn {
   display: inline;
 }
+
+/*_s Style Override*/
+
+dd {
+  margin: 0 0 1rem;
+}
