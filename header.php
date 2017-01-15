@@ -26,8 +26,9 @@
 <meta property="og:title" content="<?php the_title( '', ' &#8211; ' ) . bloginfo( 'name' ); ?>">
 <meta name="twitter:title" content="<?php the_title( '', ' &#8211; ' ) . bloginfo( 'name' ); ?>">
 <?php } else { ?>
-<meta property="og:title" content="<?php echo get_the_archive_title(); ?> &#8211; <?php bloginfo( 'name' ); ?>">
-<meta name="twitter:title" content="<?php echo get_the_archive_title(); ?> &#8211; <?php bloginfo( 'name' ); ?>">
+<?php $archive_title = get_the_archive_title(); ?>
+<meta property="og:title" content="<?php echo wp_kses($archive_title, array()); ?> &#8211; <?php bloginfo( 'name' ); ?>">
+<meta name="twitter:title" content="<?php echo wp_kses($archive_title, array()); ?> &#8211; <?php bloginfo( 'name' ); ?>">
 <?php } ?>
 <meta property="og:description" content="<?php bloginfo( 'description' ); ?>">
 <meta property="twitter:description" content="<?php bloginfo( 'description' ); ?>">
