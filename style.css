@@ -61,10 +61,6 @@ Tags: blog, one-column, custom-background, custom-colors, custom-menu, custom-he
 
 /*_s Style Override*/
 
-dd {
-  margin: 0 0 1rem;
-}
-
 .archive .format-aside .entry-title {
   display: block;
 }
