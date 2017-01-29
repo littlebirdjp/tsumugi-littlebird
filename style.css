@@ -61,6 +61,11 @@ Tags: blog, one-column, custom-background, custom-colors, custom-menu, custom-he
 
 /*_s Style Override*/
 
+.entry-title {
+  line-height: 1.4;
+}
+
+
 .archive .format-aside .entry-title {
   display: block;
 }
