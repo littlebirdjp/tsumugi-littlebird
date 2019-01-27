@@ -52,3 +52,5 @@ function littlebird_slideshare_embed($atts) {
     return '<div class="lb-embed"><div class="embed-responsive embed-responsive-' . $ratio . '"><iframe src="https://www.slideshare.net/slideshow/embed_code/' . $id . '" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div></div>';
 }
 add_shortcode('slideshare', 'littlebird_slideshare_embed');
+
+add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
